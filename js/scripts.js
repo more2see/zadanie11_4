@@ -11,22 +11,26 @@ var onePlusOne = new Phone("One", 350, "white", "old");
 var nokia = new Phone("First", 230, "blue", "new");
 Phone.prototype.printInfo = function() {
 	console.log("The phone brand is " + this.brand + ", color is " + this.color + ", the price is " + this.price + " and quality is " + this.quality + ".");
-	function applyDiscount(discount) {
-		this.discount = discount;
-		console.log("The phone brand is " + self.brand + ", the discounted price is " + ( this.discount * self.price / 100 ) + "."); 
-	}
 }
+function ApplyDiscount(discount) {
+	this.discount = discount;
+}
+var discuntedAmount = new ApplyDiscount(50); //Jak mam nazwać tą zmienną???
+ApplyDiscount.prototype.printInfo = function () {
+		console.log("The phone brand is " + self.brand + ", the discounted price is " + ( this.discount * self.price / 100 ) + "."); 
+}
+
 iPhone6S.printInfo();
 samsungGalaxyS6.printInfo();
 onePlusOne.printInfo();
 nokia.printInfo();
 
-nokia.applyDiscount(50);
-applyDiscount(50);
+nokia.ApplyDiscount();
+ApplyDiscount();
 nokia.printInfo();
 
 Phone.printInfo();
-Phone.applyDiscount(50);
+Phone.ApplyDiscount(50);
 Phone.printInfo();
 
 /*

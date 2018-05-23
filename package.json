@@ -44,5 +44,7 @@
     "url": "https://github.com/more2see/b-learning-git-2/issues"
   },
   "homepage": "https://github.com/more2see/b-learning-git-2#readme",
-  "dependencies": {}
+  "dependencies": {
+    "hoek": "^5.0.3"
+  }
 }

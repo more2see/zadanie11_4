@@ -3,7 +3,6 @@ function Phone(brand, price, color, quality) {
 	this.price = price;
 	this.color = color;
 	this.quality = quality;
-	var self = this;
 }
 var iPhone6S = new Phone("Apple", 2250, "silver", "new");
 var samsungGalaxyS6 = new Phone("Samsung", 100, "black", "old");
@@ -12,32 +11,16 @@ var nokia = new Phone("First", 230, "blue", "new");
 Phone.prototype.printInfo = function() {
 	console.log("The phone brand is " + this.brand + ", color is " + this.color + ", the price is " + this.price + " and quality is " + this.quality + ".");
 }
-function ApplyDiscount(discount) {
-	this.discount = discount;
+Phone.prototype.applyDiscount = function(discount) {
+	this.discount = this.price - discount
+	console.log("The phone brand is " + this.brand + " and discounted price is " + this.discount + ".");
 }
-var discuntedAmount = new ApplyDiscount(50); //Jak mam nazwać tą zmienną???
-ApplyDiscount.prototype.printInfo = function () {
-		console.log("The phone brand is " + self.brand + ", the discounted price is " + ( this.discount * self.price / 100 ) + "."); 
-}
-
 iPhone6S.printInfo();
 samsungGalaxyS6.printInfo();
 onePlusOne.printInfo();
 nokia.printInfo();
 
-nokia.ApplyDiscount();
-ApplyDiscount();
-nokia.printInfo();
-
-Phone.printInfo();
-Phone.ApplyDiscount(50);
-Phone.printInfo();
-
-/*
-1) nazwy zmiennych zapisz z małej litery.
-2) Dopisz do telefonu funkcję applyDiscount z parametrem, która będzie obniżać cenę telefonu. Funkcja ma modyfikować cenę telefonu w taki sposób, że wartość telefonu zostanie obniżona o podaną kwotę podaną jako parametr. Aby sprawdzić poprawność działania kodu, wypisz dane telefonu, zastosuj obniżkę i ponownie wypisz dane telefonu. Powinny pokazać się 2 różne wartości.Generalnie rzecz ujmując, po wywołaniu odpowiednio polecen printInfo, applyDiscount i ponownie printInfo, cena telefonu powinna ulec zmianie:
-var phone = new Phone(…, 1000, …); // ustawiamy cenę na 1000
-phone.printInfo(); // price = 1000
-phone.applyDiscount(100); // nic się nie wypisuje
-phone.printInfo(); // price = 900 
-*/
+iPhone6S.applyDiscount(250);
+samsungGalaxyS6.applyDiscount(100);
+onePlusOne.applyDiscount(50);
+nokia.applyDiscount(30);

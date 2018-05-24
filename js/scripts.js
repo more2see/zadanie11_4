@@ -12,7 +12,7 @@ Phone.prototype.printInfo = function() {
 	console.log("The phone brand is " + this.brand + ", color is " + this.color + ", the price is " + this.price + " and quality is " + this.quality + ".");
 }
 Phone.prototype.applyDiscount = function(discount) {
-	this.discount = this.price - discount
+	this.price = this.price - discount
 }
 iPhone6S.printInfo();
 samsungGalaxyS6.printInfo();
@@ -22,5 +22,8 @@ nokia.printInfo();
 iPhone6S.applyDiscount(250);
 iPhone6S.printInfo();
 samsungGalaxyS6.applyDiscount(100);
+samsungGalaxyS6.printInfo();
 onePlusOne.applyDiscount(50);
+onePlusOne.printInfo();
 nokia.applyDiscount(30);
+nokia.printInfo();
